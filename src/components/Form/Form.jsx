@@ -31,7 +31,7 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if(!maxPrice || !os) {
+        if(!maxPrice && !os) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
@@ -53,16 +53,15 @@ const Form = () => {
     return (
         <div className={"form"}>
             <h3>Введите ваши данные</h3>
-            {/* <div className="filterInfo">
+            <div className="filterInfo">
                 <p>Операционная система</p>
-                <input
-                    className={'input'}
-                    type="text"
-                    placeholder={'Операционная система'}
-                    value={os}
-                    onChange={onChangeCountry}
-                />
-            </div> */}
+                <select value={model} onChange={onChangeCountry} className={'select'}>
+                    <option value={'all'}>Все </option>
+                    <option value={'apple'}>iOS</option>
+                    <option value={'apple'}>Andriod</option>
+                    {/* <option value={'legal'}>Юр. лицо</option> */}
+                </select>    
+            </div>
             <div className="filterInfo">
                 <p>Максимальная цена</p>
                 <input
