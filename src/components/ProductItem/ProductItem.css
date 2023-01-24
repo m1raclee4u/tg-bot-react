@@ -1,11 +1,26 @@
 .product {
+    position: relative;
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--tg-theme-button-color);
+    gap: 7px;
+    box-shadow: -1px 5px 8px 0px rgba(34, 60, 80, 0.2);    /* border: 1px solid var(--tg-theme-button-color); */
     padding: 15px;
     width: 170px;
+    border-radius: 6px;
 }
 
+.logo{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-image: url('../../../assets/img/photo_2023-01-16_18-37-42.jpg');
+    background-position: center center;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+    border-radius: 50%;
+}
 
 .img {
     width: 100%;
@@ -16,7 +31,9 @@
 }
 
 .description {
-    font-size: 0.8em;
+    font-size: 0.7em;
+    color: #727272;
+    font-style: italic;
 }
 
 .add-btn {
