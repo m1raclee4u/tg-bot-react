@@ -3,19 +3,19 @@ import './Form.css';
 import {useTelegram} from "../../hooks/useTelegram";
 
 const Form = () => {
-    const [country, setCountry] = useState('');
-    const [street, setStreet] = useState('');
-    const [subject, setSubject] = useState('physical');
+    const [os, setCountry] = useState('');
+    const [maxPrice, setStreet] = useState('');
+    const [model, setSubject] = useState('all');
     const {tg} = useTelegram();
 
     const onSendData = useCallback(() => {
         const data = {
-            country,
-            street,
-            subject
+            os,
+            maxPrice,
+            model
         }
         tg.sendData(JSON.stringify(data));
-    }, [country, street, subject])
+    }, [os, maxPrice, model])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -31,12 +31,12 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if(!street || !country) {
+        if(!maxPrice || !os) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
         }
-    }, [country, street])
+    }, [os, maxPrice])
 
     const onChangeCountry = (e) => {
         setCountry(e.target.value)
@@ -56,21 +56,24 @@ const Form = () => {
             <input
                 className={'input'}
                 type="text"
-                placeholder={'Страна'}
-                value={country}
+                placeholder={'Операционная система'}
+                value={os}
                 onChange={onChangeCountry}
             />
             <input
                 className={'input'}
                 type="text"
-                placeholder={'Улица'}
-                value={street}
+                placeholder={'Максимальная цена'}
+                value={maxPrice}
                 onChange={onChangeStreet}
             />
-            <select value={subject} onChange={onChangeSubject} className={'select'}>
-                <option value={'physical'}>Физ. лицо</option>
-                <option value={'legal'}>Юр. лицо</option>
-            </select>
+            <div className="div">
+                <select value={model} onChange={onChangeSubject} className={'select'}>
+                    <option value={'all'}>Все </option>
+                    <option value={'legal'}>Юр. лицо</option>
+                </select>    
+            </div>
+            
         </div>
     );
 };
