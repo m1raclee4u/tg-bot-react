@@ -53,24 +53,36 @@ const Form = () => {
     return (
         <div className={"form"}>
             <h3>Введите ваши данные</h3>
-            <input
-                className={'input'}
-                type="text"
-                placeholder={'Операционная система'}
-                value={os}
-                onChange={onChangeCountry}
-            />
-            <input
-                className={'input'}
-                type="text"
-                placeholder={'Максимальная цена'}
-                value={maxPrice}
-                onChange={onChangeStreet}
-            />
-            <div className="div">
+            <div className="filterInfo">
+                <p>Операционная система</p>
+                <input
+                    className={'input'}
+                    type="text"
+                    placeholder={'Операционная система'}
+                    value={os}
+                    onChange={onChangeCountry}
+                />
+            </div>
+            <div className="filterInfo">
+                <p>Максимальная цена</p>
+                <input
+                    className={'input'}
+                    type="text"
+                    placeholder={'Максимальная цена'}
+                    value={maxPrice}
+                    onChange={onChangeStreet}
+                />
+            </div>
+            <div className="filterInfo">
+                <p>Производитель</p>
                 <select value={model} onChange={onChangeSubject} className={'select'}>
                     <option value={'all'}>Все </option>
-                    <option value={'legal'}>Юр. лицо</option>
+                    <option value={'apple'}>Apple</option>
+                    <option value={'samsung'}>Samsung</option>
+                    <option value={'honor'}>Honor</option>
+                    <option value={'huawei'}>Huawei</option>
+                    <option value={'lenovo'}>Lenovo</option>
+                    {/* <option value={'legal'}>Юр. лицо</option> */}
                 </select>    
             </div>
             
