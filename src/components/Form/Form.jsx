@@ -53,7 +53,7 @@ const Form = () => {
     return (
         <div className={"form"}>
             <h3>Введите ваши данные</h3>
-            <div className="filterInfo">
+            {/* <div className="filterInfo">
                 <p>Операционная система</p>
                 <input
                     className={'input'}
@@ -62,7 +62,7 @@ const Form = () => {
                     value={os}
                     onChange={onChangeCountry}
                 />
-            </div>
+            </div> */}
             <div className="filterInfo">
                 <p>Максимальная цена</p>
                 <input
