@@ -8,14 +8,21 @@ const Form = () => {
     const [model, setSubject] = useState('all');
     const {tg} = useTelegram();
 
+
     const onSendData = useCallback(() => {
         const data = {
             os,
             maxPrice,
             model
         }
-        tg.sendData(JSON.stringify(data));
-    }, [os, maxPrice, model])
+        fetch('https://webapptelegram.hopto.org:8443/web-data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+    }, [os, maxPrice, model])    
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
