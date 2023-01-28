@@ -3,7 +3,7 @@ import './Form.css';
 import {useTelegram} from "../../hooks/useTelegram";
 
 const Form = () => {
-    const [os, setCountry] = useState('all');
+    const [os, setCountry] = useState('os_all');
     const [maxPrice, setStreet] = useState('');
     const [model, setSubject] = useState('all');
     const {tg} = useTelegram();
@@ -56,9 +56,9 @@ const Form = () => {
             <div className="filterInfo">
                 <p>Операционная система</p>
                 <select value={model} onChange={onChangeCountry} className={'select'}>
-                    <option value={'all'}>Все </option>
-                    <option value={'apple'}>iOS</option>
-                    <option value={'andriod'}>Andriod</option>
+                    <option value={'os_all'}>Все </option>
+                    <option value={'os_apple'}>iOS</option>
+                    <option value={'os_andriod'}>Andriod</option>
                     {/* <option value={'legal'}>Юр. лицо</option> */}
                 </select>    
             </div>
