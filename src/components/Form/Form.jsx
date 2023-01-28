@@ -6,7 +6,7 @@ const Form = () => {
     const [os, setCountry] = useState('os_all');
     const [maxPrice, setStreet] = useState('');
     const [model, setSubject] = useState('all');
-    const {tg} = useTelegram();
+    const {tg, queryId} = useTelegram();
 
 
     const onSendData = useCallback(() => {
