@@ -31,7 +31,7 @@ const ProductList = () => {
             totalPrice: getTotalPrice(addedItems),
             queryId,
         }
-        fetch('https://webapptelegram.hopto.org:8443/', {
+        fetch('https://webapptelegram.hopto.org:8443/web-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
