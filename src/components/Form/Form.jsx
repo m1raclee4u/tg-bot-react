@@ -16,7 +16,7 @@ const Form = () => {
             model,
             queryId
         }
-        fetch('https://webapptelegram.hopto.org:8443/web-data', {
+        fetch('https://webapptelegram.hopto.org:8443/web-filter', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
