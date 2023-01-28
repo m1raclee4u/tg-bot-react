@@ -13,7 +13,8 @@ const Form = () => {
         const data = {
             os,
             maxPrice,
-            model
+            model,
+            queryId
         }
         fetch('https://webapptelegram.hopto.org:8443/web-data', {
             method: 'POST',
